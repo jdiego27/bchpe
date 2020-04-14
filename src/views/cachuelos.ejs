@@ -1,0 +1,61 @@
+<% include partials/_header %>
+
+<div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+    <h1 class="display-3">Oficios</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+     
+        <br>
+            <!-- LIST -->
+            <div class="col-md-12 text-left" >
+              <table class="table table-bordered table-hover table-responsive-sm">
+                <thead class="thead-light">
+                  <tr>
+                    <th>N°</th>
+                    <th>Oficio</th>
+                    <th>Distrito</th>
+                    <th>Contacto</th>
+                    <th>Celular</th>
+                    <th>Fecha de Publicacion</th>
+                    <th>Detalle del cachuelo</th>
+                    <!--
+                    <th>Fecha de Publicacion</th>
+                    <th>Fecha Fin</th>
+                    <th>Vacantes</th>
+                    -->
+                </tr>
+                </thead>
+                <tbody>
+                        <% for(var i=0; i < cach.length; i++) { %>
+                            <tr>
+                              <td><%= i + 1%></td>
+                              <td><strong><%= cach[i].position %></strong></td>
+                              <td><%= cach[i].district %></td>
+                              <td><%= cach[i].contact %></td>
+                              <td><%= cach[i].cellphone%></td>
+                              <td><%= cach[i].posting_date%></td>
+                              <td><%= cach[i].description%></td>
+                              
+                              <!-- 
+                              <td>
+                                  <a href="/ofertas-laborales/ofertas-descripcion/<%= cach[i]._id%>" class="btn btn-outline-primary btn-block">
+                                    Ver anuncio
+                                  </a>
+                                </td>
+                                -->
+                            </tr>
+                          <% } %>     
+                </tbody>
+              </table>
+        
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+
+<% include partials/_footer %>

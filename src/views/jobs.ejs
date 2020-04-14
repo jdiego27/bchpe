@@ -1,0 +1,60 @@
+<% include partials/_header %>
+
+<div class="jumbotron text-center mb-4 text-uppercase " style="margin-bottom:0">
+  <h1 class="display-3">Avisos</h1>
+</div>
+      <div class="container">
+            <div class="row">
+                <!-- LIST -->
+                    <div class="col-md-12 text-left" >
+                      <table class="table table-bordered table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                          <tr>
+                            <th>N°</th>
+                            <th>Puesto</th>
+                            <th>Distrito</th>
+                            <th>Contacto</th>
+                            <th>Ruc</th>
+                            <th>Fecha de Publicacion</th>
+                            <!-- 
+                            <th>Fecha Fin</th>
+                            -->
+                            <th>Vacantes</th>
+                            <th>Detalles</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                                <% for(var i=0; i < jobs.length; i++) { %>
+                                    <tr>
+                                      <td><%= i + 1%></td>
+                                      <td><strong><%= jobs[i].position %></strong></td>
+                                      <td><%= jobs[i].district %></td>
+                                      <td><%= jobs[i].contact %></td>
+                                      <td><%= jobs[i].ruc %></td>
+                                      <td><%= jobs[i].posting_date%></td>
+                                      <!-- 
+                                      <td><%= jobs[i].end_date %></td>
+                                      -->
+                                      <td><%= jobs[i].vacancy %></td>
+                                      <td>
+                                          <a href="/ofertas-laborales/ofertas-descripcion/<%= jobs[i]._id%>" class="btn btn-outline-primary btn-block">
+                                            Ver anuncio
+                                          </a>
+                                        </td>
+                                    </tr>
+                                  <% } %>     
+                        </tbody>
+                      </table>
+                
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- People to contact -->  
+
+<% include partials/_footer %>

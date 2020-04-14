@@ -1,0 +1,128 @@
+<% include partials/_header %>
+
+<div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+    <h1 class="display-3">Registro</h1>
+  </div>
+<div class="container">
+
+  <% if (success.length > 0) { %>
+    <div class="alert alert-success">
+        <%= success %> </div>
+<% } %>
+
+<% if (error.length > 0) { %>
+  <div class="alert alert-success">
+      <%= success %> </div>
+<% } %>
+</div>
+<div class="container" style="margin-top: 30px;">
+  
+        <div class="row">
+                <!--FORM-->
+                <div class="col-md-5">
+                  <div class="card">
+                    <div class="card-body">
+                      <form action="/agregar-curriculum" method="POST">
+                        <div class="form-group">
+                          <label for="name">Nombre</label>
+                          <input class="form-control" type="text" name="name" placeholder="" id="name" value="" required>
+                         <label for="lastname">Apellido</label>
+                          <input class="form-control" type="text" name="lastname" placeholder="" id="lastname" value="" required>
+        
+                              <div class="form-group">
+                                <label for="nationality">Nacionalidad</label>
+                                <select class="form-control" id="nationality" name="nationality" value="" required>
+                                   <option></option>
+                                   <option>Peruana</option>
+                                   <option>Otra</option>
+                                   
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="position">Posicion</label>
+                              <select class="form-control" id="position" name="position" value="" required>
+                                <option></option>
+                              
+                                <% for(var i=0; i < pos.length; i++){%>
+                                  <option><%= pos[i].position %></option>
+                                  <% } %>
+                            </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="time_experience">Experiencia</label>
+                              <select class="form-control" id="experience" name="time_experience" value="" required>
+                                 <option></option>
+                                 <option>0 - 6 meses</option>
+                                 <option>6 - 12 meses</option>
+                                 <option>1 - 2 años</option>
+                                 <option>2 - 3 años</option>
+                                 <option>3 + años</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="district">Distrito</label>
+                                <select class="form-control" id="district" name="district" value="" required>
+                                  <option></option>
+                                    <% for(var i=0; i < yo.length; i++){%>
+                                  <option><%= yo[i].district %></option>
+                                  <% } %>
+                                </select>
+                              </div>
+                              
+                          <label for="email">Correo Electronico</label>
+                          <input class="form-control" type="email" name="email" placeholder="" id="email" value="" required>
+                         
+                          <label for="cellphone">Celular</label>
+                          <input class="form-control" type="text" name="cellphone" placeholder="" id="cellphone" value="" required>
+                        
+                        <!-- 
+                        <label for="formGroupExampleInput4">Selecciona Curriculum</label>
+                        <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="resume"">
+                                <label class="custom-file-label " for="customFileLang ">Seleccionar Archivo</label>
+                        </div>
+                        -->
+                        
+                        </div>
+                        <button class="btn btn-primary btn-block " type="submit">Enviar</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                 <!-- to the right text-->
+                 <div class="col-md-7">
+                    <h2 class="text-uppercase text-justify">No te preocupes,</h2>
+                    <p>Sabemos lo dificil y estresante que puede ser al momento de conseguir un empleo, por eso tienes la opcion de dejarnos tus datos,
+                      apenas se habra una posicion te asignaremos a ella y te uniras al proceso de reclutamiento.
+                    </p>
+                    <br>
+                    <p><mark>Nota:</mark> Por el momento solo figuran algunas posiciones, vamos a seguir agregando muchas mas.
+                      </p>
+
+                  </div>
+              </div>       
+            </div>
+        
+            <!-- 
+            <script type="text/javascript">
+              function showfield(name){
+                if(name=='Other')document.getElementById('div1').innerHTML='Other: <input type="text" name="other" />';
+                else document.getElementById('div1').innerHTML='';
+              }
+              </script>
+              
+              <select name="travel_arriveVia" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value)">
+              <option selected="selected">Please select ...</option>
+              <option value="Plane">Plane</option>
+              <option value="Train">Train</option>
+              <option value="Own Vehicle">Own Vehicle</option>
+              <option value="Other">Other</option>
+              </select>
+              <div id="div1"></div>
+
+              
+     -->
+
+              
+<% include partials/_footer %>
+

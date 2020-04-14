@@ -1,0 +1,97 @@
+<% include partials/_header %>
+
+<h1 class="text-center text-uppercase mb-4"> <%= jobs.position %></h1>
+<br>
+<div class="container">
+<ul class="list-inline">
+                <li class="list-inline-item text-uppercase"><strong> Distrito:</strong> <mark><%= jobs.district %></mark>,</li>
+                <li class="list-inline-item text-uppercase"><strong> Contacto:</strong><%= jobs.contact %>,</li>
+                <li class="list-inline-item text-uppercase"><strong> Ruc: </strong><%= jobs.ruc %>,</li>
+                <li class="list-inline-item text-uppercase"><strong> Sueldo Aprox.: </strong> <mark> S/. <%= jobs.salary %></mark></li>
+                <li class="list-inline-item text-uppercase"><strong> Fecha de Publicacion: </strong><%= jobs.posting_date %></li>
+                <li class="list-inline-item text-uppercase"><strong> Vacantes: </strong> <mark><%= jobs.vacancy %></mark> </li>
+
+        </ul>
+</div>
+
+<div class="container">
+        <div class="row">
+                <div class="col-sm-12">
+                        <!-- 
+                        <p> Nos encontramos en la busqueda del siguiente perfil para una importante
+                            empresa.
+                        </p>
+                        -->
+                        <h3 class="text-uppercase text-left">Descripcion del Empleo</h3>
+                        <br>
+                        <p class="text-uppercase"><%= jobs.description.header %></p>
+                        <p class="text-uppercase"><%= jobs.description.body %></p>
+                        <ul>
+                                <li><p class="text-uppercase"><%= jobs.description.line_1 %></p></li>
+                                <li><p class="text-uppercase"><%= jobs.description.line_2 %></p></li>
+                                <li><p class="text-uppercase"><%= jobs.description.line_3 %></p></li>
+                                <li><p class="text-uppercase"><%= jobs.description.line_4 %></p></li>
+                        </ul>
+                        <p class="text-uppercase">Horario: <mark><%= jobs.description.line_schedule %></mark></p>
+                        <p class="text-uppercase">Notas: <mark><%= jobs.description.line_notes %></mark> </p>
+                         
+             
+                        <!-- 
+                        <ul class="list-unstyled ">
+                                        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut necessitatibus odit doloribus, 
+                                                voluptas magni repellendus, asperiores in, quasi hic incidunt accusantium dicta cum. 
+                                                Rerum placeat non ea optio, iusto vitae. </li>
+                                                <br>
+                                        <li>Consectetur adipiscing elit</li>
+                                        <li>Integer molestie lorem at massa</li>
+                                        <li>Facilisis in pretium nisl aliquet</li>
+                                        <li>Nulla volutpat aliquam velit
+                                          <ul>
+                                            <li>Phasellus iaculis neque</li>
+                                            <li>Purus sodales ultricies</li>
+                                            <li>Vestibulum laoreet porttitor sem</li>
+                                            <li>Ac tristique libero volutpat at</li>
+                                          </ul>
+                                        </li>
+                                        <li>Faucibus porta lacus fringilla vel</li>
+                                        <li>Aenean sit amet erat nunc</li>
+                                        <li>Eget porttitor lorem</li>
+                                      </ul>
+                                      -->
+                                      <br>
+                                      <br>                          
+                </div>
+        </div>
+</div>
+
+<div class="container">
+                <ul class="">
+                                <!-- 
+                                <li class=" text-uppercase"><i class="fa fa-phone" style="font-size:25px;color:green"> <%= jobs.cellphone %> </i> </li>
+                                -->
+                                <li class=" text-uppercase"><i class="fa fa-phone" style="font-size:25px;color:green"> <%= jobs.cellphone %> </i> </li>
+                                <br>
+                                <li class=""><i class="fas fa-mail-bulk" style="font-size:25px;color:black">: <%= jobs.email %></i> </li>
+                 </ul>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container text-uppercase mb-4">
+        <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm">
+                <a href="/ofertas-laborales" class='btn btn-outline-primary btn-block'>Regresar a las Ofertas</a>                         
+                </div>
+                <div class="col-sm">                           
+                </div>
+                <div class="col-sm">
+                <a href="http://www.facebook.com/sharer.php?" class='btn btn-outline-primary btn-block' role="button" >Comparte en Facebook</a>                         
+                </div>                      
+        </div>
+</div>
+
+ <% include partials/_footer %>
