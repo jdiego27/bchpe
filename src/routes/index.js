@@ -10,6 +10,7 @@ const Dstr = require('../models/districts');
 const JobCan = require('../models/candidates');
 const Posi = require('../models/positions');
 const Cach = require('../models/cachuelos');
+const Adddev = require('../models/delivery');
 
 
 // Initilization
@@ -174,6 +175,26 @@ router.get('/cachuelos', async (req, res) => {
   //res.render('cachuelos');
 });
 
+
+// GET THE DELIVERY SITE AND DISTRICTS/ POSITION INTO THE DROPDOWN
+router.get('/formulario-delivery', async (req, res) => {
+  const yo = await Dstr.find().sort({'district': 1});
+  console.log(yo);
+  res.render('delivery', {yo});
+
+});
+
+
+//POST from the FORM add Delivery details - need to change
+router.post('/agregar-delivery', async (req, res) => {
+  const adddelivery = new Adddev(req.body);
+  await adddelivery.save();
+  console.log(adddelivery);
+  req.flash('success', 'Muchas gracias por enviar tus datos!');
+  res.redirect('/formulario-delivery');
+  //res.send('thanks');
+
+});
 
 module.exports = router;
 

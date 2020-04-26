@@ -23,6 +23,7 @@ mongoose.connection
 .on('error',err => console.log('Your', err));
 */
 
+
 //DB to Atlas Mongodb
 mongoose.connect('mongodb+srv://root:root@clustertest-rnhw7.mongodb.net/BCHPEDB?retryWrites=true&w=majority', {useNewUrlParser: true});
 mongoose.connection
