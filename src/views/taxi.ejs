@@ -1,0 +1,57 @@
+<% include partials/_header %>
+
+<div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+    <h1 class="display-3">Lista de Taxis</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+     
+        <br>
+            <!-- LIST -->
+            <div class="col-md-12 text-left" >
+              <table class="table table-bordered table-hover table-responsive-sm">
+                <thead class="thead-light">
+                  <tr>
+                    <th>N°</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Celular</th>
+                    <th>Días permitidos para circular</th>
+                    <!--
+                    <th>Fecha de Publicacion</th>
+                    <th>Fecha Fin</th>
+                    <th>Vacantes</th>
+                    -->
+                </tr>
+                </thead>
+                <tbody>
+                        <% for(var i=0; i < taxi.length; i++) { %>
+                            <tr>
+                              <td><%= i + 1%></td>
+                              <td><strong><%= taxi[i].name %></strong></td>
+                              <td><%= taxi[i].lastname %></td>
+                              <td><%= taxi[i].cellphone %></td>
+                              <td><%= taxi[i].available_date%></td>
+                                                                                          
+                              <!-- 
+                              <td>
+                                  <a href="/ofertas-laborales/ofertas-descripcion/<%= taxi[i]._id%>" class="btn btn-outline-primary btn-block">
+                                    Ver anuncio
+                                  </a>
+                                </td>
+                                -->
+                            </tr>
+                          <% } %>     
+                </tbody>
+              </table>
+        
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+
+<% include partials/_footer %>

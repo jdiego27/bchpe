@@ -11,6 +11,7 @@ const JobCan = require('../models/candidates');
 const Posi = require('../models/positions');
 const Cach = require('../models/cachuelos');
 const Adddev = require('../models/delivery');
+const Tax = require('../models/taxis');
 
 
 // Initilization
@@ -194,6 +195,14 @@ router.post('/agregar-delivery', async (req, res) => {
   res.redirect('/formulario-delivery');
   //res.send('thanks');
 
+});
+
+//GET TAXIS
+router.get('/taxis', async (req, res) => {
+  const taxi = await Tax.find();
+  //console.log(test);
+  res.render('taxi', {taxi});
+  //res.render('cachuelos');
 });
 
 module.exports = router;
