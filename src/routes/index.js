@@ -81,8 +81,15 @@ router.get('/test', async (req, res) => {
 // GET all JOBS from database
 router.get('/ofertas-laborales', async (req, res) => {
   const jobs = await Jobs.find();
+ 
   console.log(jobs);
+ // res.status(400).send('Invalid');
+ // res.json(jobs[2].description.header);
   res.render('jobs', {jobs});
+  //res.status(200).render('jobs', {jobs});
+  //res.json({ username: 'Flavio' });
+    
+  //res.render('jobs', {jobs});
   });
 
 

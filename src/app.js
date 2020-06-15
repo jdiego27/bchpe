@@ -21,9 +21,9 @@ mongoose.connect('mongodb://localhost/BCHPEDB', {useNewUrlParser: true});
 mongoose.connection
 .once('open', () => console.log('Local DB is connected'))
 .on('error',err => console.log('Your', err));
-
-
 */
+
+
 //DB to Atlas Mongodb
 mongoose.connect('mongodb+srv://root:root@clustertest-rnhw7.mongodb.net/BCHPEDB?retryWrites=true&w=majority', {useNewUrlParser: true});
 mongoose.connection
